@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Midnight Coffee | Raja Park, Jaipur</title>
+  <meta
+    name="description"
+    content="The Midnight Coffee — coffee, shakes, snacks and late-night cravings in Raja Park, Jaipur."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #0b0908;
+      --bg2: #14100e;
+      --card: #1b1512;
+      --cream: #f5ead8;
+      --muted: #b9aa98;
+      --accent: #d6a15d;
+      --accent2: #f1c98e;
+      --border: rgba(255,255,255,.09);
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(11,9,8,.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #ddd0c0;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent2);
+    }
+
+    .nav-btn {
+      background: var(--accent);
+      color: #160f09 !important;
+      padding: 11px 19px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(7,5,4,.92) 0%, rgba(7,5,4,.70) 45%, rgba(7,5,4,.35) 100%),
+        url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      padding-top: 70px;
+    }
+
+    .eyebrow {
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(55px, 8vw, 96px);
+      line-height: .98;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 560px;
+      color: #d3c5b5;
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: .3s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #160f09;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--accent2);
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.25);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.08);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 58px);
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--bg2);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 520px;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-copy h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .about-copy h2 span {
+      color: var(--accent);
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 35px;
+      margin-top: 30px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      color: var(--accent2);
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* MENU */
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(214,161,93,.45);
+    }
+
+    .menu-image {
+      height: 230px;
+    }
+
+    .menu-image img {
+      height: 100%;
+    }
+
+    .menu-content {
+      padding: 20px;
+    }
+
+    .menu-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin-bottom: 6px;
+    }
+
+    .menu-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    /* FEATURE */
+
+    .feature {
+      background:
+        linear-gradient(rgba(11,9,8,.82), rgba(11,9,8,.82)),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1800&q=85")
+        center/cover fixed;
+      text-align: center;
+    }
+
+    .feature h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 6vw, 70px);
+      margin-bottom: 18px;
+    }
+
+    .feature p {
+      color: #d3c5b5;
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.4fr .8fr .8fr;
+      grid-template-rows: 250px 250px;
+      gap: 15px;
+    }
+
+    .gallery div {
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .gallery img {
+      height: 100%;
+      transition: .5s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.06);
+    }
+
+    .gallery div:first-child {
+      grid-row: span 2;
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      background: var(--bg2);
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .review {
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .stars {
+      color: var(--accent);
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    .review p {
+      color: #d0c3b3;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .review strong {
+      font-size: 14px;
+    }
+
+    /* LOCATION */
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 25px;
+    }
+
+    .location-card {
+      background: var(--card);
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .location-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .location-item {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .location-item strong {
+      display: block;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+      border-radius: 20px;
+      filter: grayscale(.7) contrast(1.1);
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 75px 0;
+      background: var(--accent);
+      color: #160f09;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      margin-bottom: 25px;
+    }
+
+    .cta .btn {
+      background: #160f09;
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+      background: #070605;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid,
+      .review-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px 220px;
+      }
+
+      .gallery div:first-child {
+        grid-row: span 1;
+        grid-column: span 2;
+      }
+
+      .about-image {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      section {
+        padding: 75px 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .menu-grid,
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 220px);
+      }
+
+      .gallery div:first-child {
+        grid-column: auto;
+      }
+
+      .stats {
+        gap: 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta h2 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">THE <span>MIDNIGHT</span> COFFEE</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#location">Location</a></li>
+        <li>
+          <a href="tel:+917357557179" class="nav-btn">Call Now</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">Coffee • Food • Late Night Cravings</div>
+
+        <h1>
+          Your Midnight<br>
+          <span>Cravings, Sorted.</span>
+        </h1>
+
+        <p>
+          Great coffee, refreshing shakes, delicious bites and the perfect
+          place to satisfy your cravings in Raja Park, Jaipur.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            Explore Menu →
+          </a>
+
+          <a href="https://wa.me/917357557179" class="btn btn-outline">
+            Order on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1000&q=85"
+          alt="Cafe interior"
+        />
+      </div>
+
+      <div class="about-copy">
+        <div class="eyebrow">Welcome to the cafe</div>
+
+        <h2>
+          More Than Just<br>
+          <span>Coffee.</span>
+        </h2>
+
+        <p>
+          At The Midnight Coffee, we bring together comforting coffee,
+          refreshing beverages and delicious food under one roof.
+        </p>
+
+        <p>
+          Whether you're catching up with friends, taking a break or simply
+          satisfying those late-night cravings, we've got something for you.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>24/7</strong>
+            <span>Cravings Welcome</span>
+          </div>
+
+          <div class="stat">
+            <strong>100+</strong>
+            <span>Food & Drinks</span>
+          </div>
+
+          <div class="stat">
+            <strong>Raja Park</strong>
+            <span>Jaipur</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Our favourites</div>
+        <h2>Made For Your Cravings</h2>
+        <p>
+          A few favourites from our menu. Ask us about today's specials.
+        </p>
+      </div>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <div class="menu-image">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85" alt="Cold Coffee">
+          </div>
+          <div class="menu-content">
+            <h3>Classic Cold Coffee</h3>
+            <p>Rich, creamy and perfectly chilled.</p>
+            <span class="price">₹99</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-image">
+            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=85" alt="Chocolate Shake">
+          </div>
+          <div class="menu-content">
+            <h3>Chocolate Shake</h3>
+            <p>Thick, smooth and chocolatey.</p>
+            <span class="price">₹149</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-image">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=85" alt="Burger">
+          </div>
+          <div class="menu-content">
+            <h3>Classic Burger</h3>
+            <p>A delicious bite for your cravings.</p>
+            <span class="price">₹129</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-image">
+            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=85" alt="Pasta">
+          </div>
+          <div class="menu-content">
+            <h3>Creamy Pasta</h3>
+            <p>Comfort food, made fresh.</p>
+            <span class="price">₹179</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-image">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=85" alt="Momos">
+          </div>
+          <div class="menu-content">
+            <h3>Cheese Momos</h3>
+            <p>Hot, cheesy and full of flavour.</p>
+            <span class="price">₹139</span>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-image">
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=85" alt="Mojito">
+          </div>
+          <div class="menu-content">
+            <h3>Fresh Mojito</h3>
+            <p>Cool, refreshing and citrusy.</p>
+            <span class="price">₹119</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE -->
+  <section class="feature">
+    <div class="container">
+      <div class="eyebrow">The perfect hangout</div>
+
+      <h2>Good Coffee.<br>Good Food. Good Nights.</h2>
+
+      <p>
+        Come for the coffee, stay for the conversations and leave with
+        memories worth coming back for.
+      </p>
+
+      <a href="tel:+917357557179" class="btn btn-primary">
+        Reserve / Enquire
+      </a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Inside The Midnight</div>
+        <h2>A Taste Of The Experience</h2>
+      </div>
+
+      <div class="gallery">
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85" alt="Cafe">
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85" alt="Coffee">
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=85" alt="Cafe interior">
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=800&q=85" alt="Coffee table">
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85" alt="Restaurant">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">What people say</div>
+        <h2>Good Vibes, Great Reviews</h2>
+      </div>
+
+      <div class="review-grid">
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Amazing place to chill with friends. The coffee and food were
+            really good."
+          </p>
+          <strong>— Happy Customer</strong>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Perfect spot for late-night cravings. Loved the ambience and
+            the drinks."
+          </p>
+          <strong>— Happy Customer</strong>
+        </div>
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Good food, nice atmosphere and a great place to hang out."
+          </p>
+          <strong>— Happy Customer</strong>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="container">
+
+      <div class="section-heading">
+        <div class="eyebrow">Find us</div>
+        <h2>Come Say Hello</h2>
+      </div>
+
+      <div class="location-grid">
+
+        <div class="location-card">
+
+          <h3>The Midnight Coffee</h3>
+
+          <div class="location-item">
+            <strong>📍 Address</strong>
+            Shop No. 300-A, Gurunanakpura,
+            Raja Park, Jaipur, Rajasthan 302004
+          </div>
+
+          <div class="location-item">
+            <strong>📞 Phone</strong>
+            +91 73575 57179
+          </div>
+
+          <div class="location-item">
+            <strong>🕐 Hours</strong>
+            Open 24 Hours*
+          </div>
+
+          <div style="margin-top:25px;display:flex;gap:10px;flex-wrap:wrap;">
+
+            <a
+              href="tel:+917357557179"
+              class="btn btn-primary"
+            >
+              Call Us
+            </a>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=The+Midnight+Coffee+Raja+Park+Jaipur"
+              target="_blank"
+              class="btn btn-outline"
+            >
+              Get Directions
+            </a>
+
+          </div>
+
+          <p style="font-size:11px;color:#8e8173;margin-top:18px;">
+            *Please confirm operating hours with the cafe before publishing.
+          </p>
+
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps?q=The%20Midnight%20Coffee%20Raja%20Park%20Jaipur&output=embed"
+          loading="lazy"
+          title="The Midnight Coffee location">
+        </iframe>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <h2>Craving Something?</h2>
+
+      <p>
+        Your next coffee, snack or midnight craving is just a call away.
+      </p>
+
+      <a
+        href="https://wa.me/917357557179"
+        class="btn"
+      >
+        Order on WhatsApp →
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+
+      <div class="logo">
+        THE <span>MIDNIGHT</span> COFFEE
+      </div>
+
+      <p>
+        © 2026 The Midnight Coffee. All rights reserved.
+      </p>
+
+      <p>
+        Raja Park • Jaipur
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
